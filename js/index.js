@@ -41,19 +41,19 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let links = document.querySelectorAll('a')
+let navbar = document.querySelectorAll('nav > a')
 
-navItem1 = links[0]
+navItem1 = navbar[0]
 navItem1.textContent = siteContent["nav"]["nav-item-1"]
-navItem2 = links[1]
+navItem2 = navbar[1]
 navItem2.textContent = siteContent["nav"]["nav-item-2"]
-navItem3 = links[2]
+navItem3 = navbar[2]
 navItem3.textContent = siteContent["nav"]["nav-item-3"]
-navItem4 = links[3]
+navItem4 = navbar[3]
 navItem4.textContent = siteContent["nav"]["nav-item-4"]
-navItem5 = links[4]
+navItem5 = navbar[4]
 navItem5.textContent = siteContent["nav"]["nav-item-5"]
-navItem6 = links[5]
+navItem6 = navbar[5]
 navItem6.textContent = siteContent["nav"]["nav-item-6"]
 
 ctaH1 = document.querySelector('.cta-text > h1')
@@ -80,3 +80,29 @@ bottomContent[0].querySelector('p').textContent = siteContent["main-content"]['s
 bottomContent[1].querySelector('p').textContent = siteContent["main-content"]['product-content']
 bottomContent[2].querySelector('p').textContent = siteContent["main-content"]['vision-content']
 
+contact = document.querySelector('.contact')
+contact.querySelector('h4').textContent = siteContent['contact']['contact-h4']
+contactContent = contact.querySelectorAll('p')
+contactContent[0].textContent = siteContent['contact']['address']
+contactContent[1].textContent = siteContent['contact']['phone']
+contactContent[2].textContent = siteContent['contact']['email']
+
+footer = document.querySelector('footer > p')
+footer.textContent = siteContent['footer']['copyright']
+
+navbar.forEach(navItem => navItem.style.color = 'green')
+
+aTagA = document.createElement('a')
+aTagA.setAttribute('href','#')
+aTagA.innerText = "Append"
+const appnd = aTagA;
+
+aTagP = document.createElement('a')
+aTagP.setAttribute('href','#')
+aTagP.innerText = "Prepend"
+const prepnd = aTagP;
+
+var nav = document.querySelector('nav')
+
+nav.append(appnd);
+nav.prepend(prepnd);
